@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import axios from "axios";
 import io from "socket.io-client";
-const socket = io.connect("http://localhost:3001");
 
 const ChatContext = createContext({});
 
@@ -17,6 +16,7 @@ export function useChatCart() {
 
 export function ChatContextProvider({ children }) {
   const api = import.meta.env.VITE_API_KEY;
+  const socket = io.connect(api);
   const [chats, setChats] = useState([]);
   const [selected, setSelected] = useState("");
   const [messages, setMessages] = useState([]);
