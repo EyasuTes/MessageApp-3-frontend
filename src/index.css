@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 216, 30, 91;
+    --secondary: 138, 78, 252;
+    --light: 238, 238, 238;
+    --light-alt: 97, 117, 155;
+    --dark: 19, 26, 38;
+    --dark-alt: 32, 43, 62;
+  }
+}
