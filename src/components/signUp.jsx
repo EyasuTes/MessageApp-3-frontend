@@ -9,7 +9,7 @@ export default function SignUp({ setIsRegistered }) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const { setPics, pics } = useChatCart();
+  const { pics, api } = useChatCart();
 
   const [error, setError] = useState("");
 
@@ -36,7 +36,7 @@ export default function SignUp({ setIsRegistered }) {
       };
 
       const response = await axios.post(
-        "http://localhost:3001/api/user",
+        api + "/api/user",
         {
           name: username,
           phone,

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useChatCart } from "../context/context";
 export default function SignUp({ setIsRegistered }) {
+  const { api } = useChatCart();
   const navigate = useNavigate();
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +21,7 @@ export default function SignUp({ setIsRegistered }) {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:3001/api/user/login",
+        api + "/api/user/login",
         {
           phone,
           password,
